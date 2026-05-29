@@ -12,11 +12,27 @@
   "app": {
     "windows": [
       {
+        "label": "launcher",
         "title": "QuickNote",
-        "width": 800,
-        "height": 600
+        "width": 600,
+        "height": 64,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "center": true
+      },
+      {
+        "label": "list",
+        "title": "QuickNote — メモ一覧",
+        "width": 700,
+        "height": 500,
+        "visible": false
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }
