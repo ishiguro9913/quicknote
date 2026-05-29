@@ -1,3 +1,11 @@
+/* ランチャーウィンドウ (label=launcher) は背景を透明にする。
+   透過ウィンドウは html/body を transparent にしないと不透明な板が出てしまう。 */
+:root[data-window="launcher"],
+:root[data-window="launcher"] body {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
 }

@@ -1,2 +1,3 @@
-// commands モジュールのまとめ。notes サブモジュールを公開する。
+// commands モジュールのまとめ。
 pub mod notes;
+pub mod window;

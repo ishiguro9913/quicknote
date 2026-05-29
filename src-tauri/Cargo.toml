@@ -18,11 +18,16 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = [] }
+# macos-private-api: 透過ウィンドウ(tauri.conf.json の macOSPrivateApi: true)に必要
+tauri = { version = "2", features = ["macos-private-api"] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 # sqlx: 非同期SQLライブラリ。runtime-tokio はTauriが使う非同期ランタイムに合わせる指定。
 # sqlite で SQLite ドライバを有効化。
 sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite"] }
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-global-shortcut = "2"
+tauri-plugin-positioner = "2"
 
